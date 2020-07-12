@@ -1,0 +1,19 @@
+summary: Returns pet with specified id.
+description: Optional extended description in CommonMark or HTML.
+tags:
+- Globals
+parameters:   
+  - name: id
+    type: integer
+    in: query
+    required: True
+    minimum: 1
+  - name: owner
+    type: string
+    in: query
+    required: True
+responses:
+  200:
+    description: OK
+  404:
+    description: Failed

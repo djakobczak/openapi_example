@@ -1,0 +1,1 @@
+PATH_TO_OPENAPI = "openapi.yml"

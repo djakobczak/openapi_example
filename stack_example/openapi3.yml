@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 0.1.1
+components:
+  schemas:
+    User:
+      properties:
+        id:
+          type: integer
+          minimum: 0
+        name:
+          type: string
+      required:  
+        - id
+        - name
+    HostnameDefinition:
+      properties:
+        id:
+          type: integer
+          minimum: 0
+        name:
+          type: string
+      required:
+        - id
+        - name
+paths:
+  /home:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: userId
+          in: query
+          required: true
+          description: The ID of the user to return.
+          schema:
+            type: integer
+            minimum: 0
+      responses:
+          '200':
+            description: Ok
+  /info:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: infoName
+          in: query
+          required: true
+          description: info name
+          schema:
+            type: string
+      responses:
+          '200':
+            description: Ok
+  /users/:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: userId
+          in: query
+          required: true
+          description: The ID of the user to return.
+          schema:
+            type: integer
+            minimum: 0
+      responses:
+        '200':
+          description: The response
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/User'
+      operationId: UserAPI
+  /hostname/:
+    post:
+      summary: change hostname
+      requestBody:
+        content:
+          application/json: 
+            schema: 
+              $ref: '#/components/schemas/HostnameDefinition'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Response msg
+      operationId: HostnameChange
