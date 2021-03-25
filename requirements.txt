@@ -37,7 +37,7 @@ pathlib2==2.3.5
 pylint==1.9.5
 pyrsistent==0.16.0
 pytz==2020.1
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.24.0
 scandir==1.10.0
 singledispatch==3.4.0.3
